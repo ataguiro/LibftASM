@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <strings.h>
 #include <ctype.h>
+#include "libfts.h"
 
 #ifndef HEXDUMP_COLS
 #define HEXDUMP_COLS 8
@@ -72,13 +73,14 @@ int		main(void)
 	puts(">>> FT_STRCAT <<<\n");
 
 	puts("Basic usage:");
-	strcpy(stack_ptr, "Hello, ft_strcat ASM test! \0");
-	strcpy(stack_ptr2, "Me too!\0");
+	//strcpy(stack_ptr, "Hello, ft_strcat ASM test! \0");
+	//strcpy(stack_ptr2, "Me too!\0");
+	strcpy(stack_ptr, "Hi");
+	strcpy(stack_ptr2, "\0");
 	puts("=== Before ft_strcat ===");
 	hexdump(stack_ptr, strlen(stack_ptr));
 	ptr = ft_strcat(stack_ptr, stack_ptr2);
-	puts(ptr);
-	puts("=== After ft_strcat ===");
+	puts("\n=== After ft_strcat ===");
 	hexdump(ptr, strlen(ptr));
 	puts("--");
 	hexdump(stack_ptr, strlen(stack_ptr));
