@@ -6,7 +6,7 @@
 #    By: ataguiro <ataguiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/15 14:57:28 by ataguiro          #+#    #+#              #
-#    Updated: 2018/02/26 19:03:53 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/02/28 16:33:52 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ OBJDIR	:=	obj/
 INCDIR	:=	include/
 SRC		:=	$(SRCDIR)ft_bzero.s \
 			$(SRCDIR)ft_strcat.s \
-			$(SRCDIR)ft_strlen.s
+			$(SRCDIR)ft_strlen.s \
+			$(SRCDIR)ft_isalpha.s \
+			$(SRCDIR)ft_isdigit.s
 OBJ		:=	$(SRC:$(SRCDIR)%.s=$(OBJDIR)%.o)
 INC		:=	-I./$(INCDIR)
 CACHEF	:=	.cache_exists

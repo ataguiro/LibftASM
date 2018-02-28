@@ -70,13 +70,11 @@ int		main(void)
 	printf("ft_strlen output: %lu\n", ft_strlen(stack_ptr));
 
 	/* FT_STRCAT */
-	puts(">>> FT_STRCAT <<<\n");
+	puts("\n>>> FT_STRCAT <<<\n");
 
 	puts("Basic usage:");
-	//strcpy(stack_ptr, "Hello, ft_strcat ASM test! \0");
-	//strcpy(stack_ptr2, "Me too!\0");
-	strcpy(stack_ptr, "Hi");
-	strcpy(stack_ptr2, "\0");
+	strcpy(stack_ptr, "Hello, ft_strcat ASM test! \0");
+	strcpy(stack_ptr2, "Me too!\0");
 	puts("=== Before ft_strcat ===");
 	hexdump(stack_ptr, strlen(stack_ptr));
 	ptr = ft_strcat(stack_ptr, stack_ptr2);
@@ -85,4 +83,17 @@ int		main(void)
 	puts("--");
 	hexdump(stack_ptr, strlen(stack_ptr));
 
+	/* FT_ISALPHA */
+	puts("\n>>> FT_ISALPHA <<<\n");
+
+	puts("Basic usage:");
+	for (int i = 0; i < 128; ++i)
+		printf("ft_isalpha (%d): %d --- isalpha (%d): %d\n", i, ft_isalpha(i), i, isalpha(i));
+
+	/* FT_ISALPHA */
+	puts("\n>>> FT_ISDIGIT <<<\n");
+
+	puts("Basic usage:");
+	for (int i = 0; i < 128; ++i)
+		printf("ft_isdigit (%d): %d --- isdigit (%d): %d\n", i, ft_isdigit(i), i, isdigit(i));
 }
