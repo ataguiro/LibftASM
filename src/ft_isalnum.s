@@ -13,16 +13,19 @@
 section .text
 	global _ft_isalnum
 
-extern 
+extern _ft_isalpha
+extern _ft_isdigit
 
 _ft_isalnum:
-	cmp rdi, 48
-	jb fail
-	cmp rdi, 57
-	ja fail
-	mov rax, 1
+	call _ft_isalpha
+	test rax, rax
+	jnz success
+	call _ft_isdigit
+	test rax, rax
+	jnz success
+	xor rax, rax
 	ret
 
-fail:
-	xor rax, rax
+success:
+	mov rax, 1
 	ret

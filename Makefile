@@ -16,7 +16,7 @@ INDEX	:=	1
 # ====================
 
 # ===== Standard =====
-CC		:=	/Users/ataguiro/.brew/bin/nasm
+CC		:=	nasm
 SFLAGS	:=	-f macho64
 SRCDIR	:=	src/
 OBJDIR	:=	obj/
@@ -25,7 +25,12 @@ SRC		:=	$(SRCDIR)ft_bzero.s \
 			$(SRCDIR)ft_strcat.s \
 			$(SRCDIR)ft_strlen.s \
 			$(SRCDIR)ft_isalpha.s \
-			$(SRCDIR)ft_isdigit.s
+			$(SRCDIR)ft_isdigit.s \
+			$(SRCDIR)ft_isalnum.s \
+			$(SRCDIR)ft_isprint.s \
+			$(SRCDIR)ft_toupper.s \
+			$(SRCDIR)ft_tolower.s \
+			$(SRCDIR)ft_puts.s
 OBJ		:=	$(SRC:$(SRCDIR)%.s=$(OBJDIR)%.o)
 INC		:=	-I./$(INCDIR)
 CACHEF	:=	.cache_exists

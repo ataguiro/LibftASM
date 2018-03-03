@@ -25,12 +25,11 @@ _ft_isalpha:
 check:
 	cmp rdi, 97
 	jb fail
-	jmp success
-
-fail:
-	xor rax, rax
-	ret
 
 success:
 	mov rax, 1
+	ret
+
+fail:
+	xor rax, rax
 	ret

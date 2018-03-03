@@ -96,4 +96,38 @@ int		main(void)
 	puts("Basic usage:");
 	for (int i = 0; i < 128; ++i)
 		printf("ft_isdigit (%d): %d --- isdigit (%d): %d\n", i, ft_isdigit(i), i, isdigit(i));
+
+	/* FT_ISALNUM */
+	puts("\n>>> FT_ISALNUM <<<\n");
+
+	puts("Basic usage:");
+	for (int i = 0; i < 128; ++i)
+		printf("ft_isalnum (%d): %d --- isalnum (%d): %d\n", i, ft_isalnum(i), i, isalnum(i));
+
+	/* FT_ISPRINT */
+	puts("\n>>> FT_ISPRINT <<<\n");
+
+	puts("Basic usage:");
+	for (int i = 0; i < 128; ++i)
+		printf("ft_isprint (%d): %d --- isprint (%d): %d\n", i, ft_isprint(i), i, isprint(i));
+
+	/* FT_TOUPPER */
+	puts("\n>>> FT_TOUPPER <<<\n");
+
+	puts("Basic usage:");
+	for (int i = 32; i < 126; ++i)
+		printf("ft_toupper (%c): %c --- toupper (%c): %c\n", i, ft_toupper(i), i, toupper(i));
+
+	/* FT_TOLOWER */
+	puts("\n>>> FT_TOLOWER <<<\n");
+
+	puts("Basic usage:");
+	for (int i = 32; i < 126; ++i)
+		printf("ft_tolower (%c): %c --- tolower (%c): %c\n", i, ft_tolower(i), i, tolower(i));
+
+	/* FT_PUTS */
+	puts("\n>>> FT_PUTS <<<\n");
+	printf("puts(\"Hello world\"): %d\n", puts("Hello World"));
+	printf("ft_puts(\"Hello world\"): %d\n", ft_puts("Hello World"));
+
 }
