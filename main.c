@@ -126,8 +126,11 @@ int		main(void)
 		printf("ft_tolower (%c): %c --- tolower (%c): %c\n", i, ft_tolower(i), i, tolower(i));
 
 	/* FT_PUTS */
+	strcpy(stack_ptr, "Hello World");
 	puts("\n>>> FT_PUTS <<<\n");
-	printf("puts(\"Hello world\"): %d\n", puts("Hello World"));
-	printf("ft_puts(\"Hello world\"): %d\n", ft_puts("Hello World"));
-
+	n = puts(stack_ptr);
+	printf("ret = %d (puts)\n", n);
+	n = ft_puts(stack_ptr);
+	printf("ret = %d (ft_puts)\n", n);
+	printf("Integrity test: %s\n", stack_ptr);
 }
