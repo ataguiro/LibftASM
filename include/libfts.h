@@ -13,5 +13,6 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_puts(const char *s);
+void	*ft_memset(void *s, int c, size_t len);
 
 #endif

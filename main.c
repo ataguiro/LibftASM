@@ -126,11 +126,35 @@ int		main(void)
 		printf("ft_tolower (%c): %c --- tolower (%c): %c\n", i, ft_tolower(i), i, tolower(i));
 
 	/* FT_PUTS */
-	strcpy(stack_ptr, "Hello World");
+	strcpy(stack_ptr, "Hello World! I'm a test");
 	puts("\n>>> FT_PUTS <<<\n");
 	n = puts(stack_ptr);
 	printf("ret = %d (puts)\n", n);
 	n = ft_puts(stack_ptr);
 	printf("ret = %d (ft_puts)\n", n);
 	printf("Integrity test: %s\n", stack_ptr);
+
+
+	/* FT_MEMSET */
+	puts("\n>>> FT_MEMSET tests <<<\n");
+
+	puts("Basic usage:");
+	strcpy(stack_ptr, "Hello, ft_memset ASM test!\0");
+	puts("=== Before ft_memset ===");
+	hexdump(stack_ptr, 27);
+	ptr = ft_memset(stack_ptr, 'A', 10); // Setting to 'A' first 10 bytes, checking with hexdump
+	puts("\n=== After ft_memset(ptr, 'A', 10) ===");
+	hexdump(stack_ptr, 27);
+	printf("Integrity test: %s\n", ptr);
+	
+	puts("\nWith len 0:");
+	strcpy(stack_ptr, "Hello, ft_memset ASM test!\0");
+	puts("=== Before ft_memset ===");
+	hexdump(stack_ptr, 27);
+	ptr = ft_memset(stack_ptr, 'A', 0); // Setting to 'A' 0 byte, should do nothing
+	puts("\n=== After ft_memset(ptr, 'A', 0) ===");
+	hexdump(stack_ptr, 27);
+	printf("Integrity test: %s\n", ptr);
+
+
 }
