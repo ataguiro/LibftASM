@@ -17,7 +17,7 @@ back:
 	mov rax, 0x2000004 ; write syscall
 	syscall
 
-	mov rsi, endl
+	lea rsi, [rel endl]
 	mov rdx, 1
 	mov rax, 0x2000004
 	syscall
@@ -25,9 +25,9 @@ back:
 	ret
 
 null_case:
-	mov rdi, null
+	lea rdi, [rel null]
 	jmp back
 
 section .data
 	endl db 0xa
-	null db "(null)", 0xa
+	null db "(null)"

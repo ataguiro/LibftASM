@@ -134,6 +134,13 @@ int		main(void)
 	printf("ret = %d (ft_puts)\n", n);
 	printf("Integrity test: %s\n", stack_ptr);
 
+	ptr = NULL;
+	puts("\nNULL test:");
+	n = puts(ptr);
+	printf("ret = %d (puts)\n", n);
+	n = ft_puts(ptr);
+	printf("ret = %d (ft_puts)\n", n);
+	printf("Integrity test: %s\n", ptr);
 
 	/* FT_MEMSET */
 	puts("\n>>> FT_MEMSET tests <<<\n");
