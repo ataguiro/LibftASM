@@ -6,7 +6,7 @@
 #    By: ataguiro <ataguiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/15 14:57:28 by ataguiro          #+#    #+#              #
-#    Updated: 2018/03/11 16:48:16 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/03/15 11:56:34 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRC		:=	$(SRCDIR)ft_bzero.s \
 			$(SRCDIR)ft_toupper.s \
 			$(SRCDIR)ft_tolower.s \
 			$(SRCDIR)ft_puts.s \
-			$(SRCDIR)ft_memset.s
+			$(SRCDIR)ft_memset.s \
+			$(SRCDIR)ft_memcpy.s
 OBJ		:=	$(SRC:$(SRCDIR)%.s=$(OBJDIR)%.o)
 INC		:=	-I./$(INCDIR)
 CACHEF	:=	.cache_exists
