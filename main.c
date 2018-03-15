@@ -146,7 +146,7 @@ int		main(void)
 	puts("\n=== After ft_memset(ptr, 'A', 10) ===");
 	hexdump(stack_ptr, 27);
 	printf("Integrity test: %s\n", ptr);
-	
+
 	puts("\nWith len 0:");
 	strcpy(stack_ptr, "Hello, ft_memset ASM test!\0");
 	puts("=== Before ft_memset ===");
@@ -156,5 +156,38 @@ int		main(void)
 	hexdump(stack_ptr, 27);
 	printf("Integrity test: %s\n", ptr);
 
+	/* FT_MEMCPY */
+	puts("\n>>> FT_MEMCPY tests <<<\n");
 
+	puts("Basic usage:");
+	strcpy(stack_ptr, "Hello, ft_memcpy ASM test!\0");
+	memset(stack_ptr2, 0, 27);
+	puts("=== Before ft_memcpy ===");
+	hexdump(stack_ptr2, 27);
+	ptr = ft_memcpy(stack_ptr2, stack_ptr, 27); // Copying stack_ptr to stack_ptr2, checking with hexdump
+	puts("\n=== After ft_memcpy(dst, src, 27) ===");
+	hexdump(stack_ptr2, 27);
+	printf("Integrity test: %s\n", ptr);
+	
+	puts("\nWith len 0:");
+	strcpy(stack_ptr, "Hello, ft_memcpy ASM test!\0");
+	memset(stack_ptr2, 0, 27);
+	puts("=== Before ft_memcpy ===");
+	hexdump(stack_ptr2, 27);
+	ptr = ft_memcpy(stack_ptr2, stack_ptr, 0); // Copying stack_ptr to stack_ptr2, checking with hexdump
+	puts("\n=== After ft_memcpy(dst, src, 0) ===");
+	hexdump(stack_ptr2, 27);
+	printf("Integrity test: %s\n", ptr);
+
+	/* FT_STRDUP */
+	puts("\n>>> FT_STRDUP <<<\n");
+
+	ptr = NULL;
+	puts("Basic usage:");
+	puts("=== Before ft_strdup ===");
+	printf("ptr at %p\n", ptr);
+	ptr = ft_strdup("I am a test for ft_strdup");
+	puts("=== After ft_strdup ===");
+	printf("ptr at %p\n", ptr);
+	hexdump(ptr, strlen(ptr));
 }

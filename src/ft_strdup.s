@@ -1,26 +1,28 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_memcpy.s                                        :+:      :+:    :+:    #
+#    ft_strdup.s                                        :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ataguiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/03/15 11:51:22 by ataguiro          #+#    #+#              #
-#    Updated: 2018/03/15 13:00:34 by ataguiro         ###   ########.fr        #
+#    Created: 2018/03/15 13:00:41 by ataguiro          #+#    #+#              #
+#    Updated: 2018/03/15 13:34:09 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 section .text
-	global _ft_memcpy
+	global _ft_strdup
 
-; void *memcpy(void *restrict dst, const void *restrict src, size_t n);
+extern _malloc
+extern _ft_strlen
+extern _ft_memcpy
 
-_ft_memcpy:
-	mov rax, rdi
-	test rdx, rdx
-	jz end
-	cld           ; Just to be sure
-	rep movsb
-
-end:
+_ft_strdup:
+	mov rsi, rdi
+	call _ft_strlen
+	mov rdi, rax
+	call _malloc
+	mov rdx, rdi
+	mov rdi, rax
+	call _ft_memcpy
 	ret
