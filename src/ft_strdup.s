@@ -6,7 +6,7 @@
 #    By: ataguiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/15 13:00:41 by ataguiro          #+#    #+#              #
-#    Updated: 2018/03/15 13:34:09 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/03/16 19:14:53 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ extern _ft_strlen
 extern _ft_memcpy
 
 _ft_strdup:
+	sub rsp, 8
+
 	mov rsi, rdi
 	call _ft_strlen
 	mov rdi, rax
