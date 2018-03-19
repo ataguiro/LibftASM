@@ -6,7 +6,7 @@
 #    By: ataguiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/15 13:00:41 by ataguiro          #+#    #+#              #
-#    Updated: 2018/03/16 19:14:53 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/03/19 17:56:04 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,18 @@ extern _ft_strlen
 extern _ft_memcpy
 
 _ft_strdup:
-	sub rsp, 8
+	push rbp
+	mov rbp, rsp
 
-	mov rsi, rdi
+	push rdi
 	call _ft_strlen
+	push rax
 	mov rdi, rax
 	call _malloc
-	mov rdx, rdi
-	mov rdi, rax
+	push rax
+	pop rdi
+	pop rdx
+	pop rsi
 	call _ft_memcpy
+	leave
 	ret
