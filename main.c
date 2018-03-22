@@ -196,5 +196,5 @@ int		main(void)
 	ptr = ft_strdup("I am a test for ft_strdup");
 	puts("=== After ft_strdup ===");
 	printf("ptr at %p\n", ptr);
-	hexdump(ptr, strlen(ptr));
+	hexdump(ptr, strlen(ptr) + 1);
 }

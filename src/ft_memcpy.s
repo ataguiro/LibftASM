@@ -6,7 +6,7 @@
 #    By: ataguiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/15 11:51:22 by ataguiro          #+#    #+#              #
-#    Updated: 2018/03/19 18:08:12 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/03/22 18:57:25 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,12 @@ section .text
 _ft_memcpy:
 	mov r8, rdi
 	xor rax, rax
+	mov rcx, rdx
 	test rdx, rdx
 	jz end
 	cld           ; Just to be sure
 	rep movsb
+	movsb
 
 end:
 	mov rax, r8
