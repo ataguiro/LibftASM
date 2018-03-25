@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <strings.h>
 #include <ctype.h>
+#include <fcntl.h>
+#include <unistd.h>
+
 #include "libfts.h"
 
 #ifndef HEXDUMP_COLS
@@ -197,4 +200,19 @@ int		main(void)
 	puts("=== After ft_strdup ===");
 	printf("ptr at %p\n", ptr);
 	hexdump(ptr, strlen(ptr) + 1);
+
+	/* FT_CAT */
+	puts("\n>>> FT_CAT <<<\n");
+
+	puts("Reading file 'test_file_ft_cat.txt' with different data...");
+
+	system("echo 'Hello, World' > test_file_ft_cat.txt");
+	n = open("test_file_ft_cat.txt", O_RDONLY);
+	ft_cat(n);
+	close(n);
+
+	system("echo 'Hello, World. I m a better testt!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                        1234567890qwertyuiopasdfghjklzxcvbnm[],./' > test_file_ft_cat.txt");
+	n = open("test_file_ft_cat.txt", O_RDONLY);
+	ft_cat(n);
+	close(n);
 }

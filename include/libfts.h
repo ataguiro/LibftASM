@@ -16,5 +16,6 @@ int		ft_puts(const char *s);
 void	*ft_memset(void *s, int c, size_t len);
 void	*ft_memcpy(void *dst, void *src, size_t len);
 char	*ft_strdup(const char *s1);
+int		ft_cat(int fd);
 
 #endif

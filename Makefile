@@ -6,7 +6,7 @@
 #    By: ataguiro <ataguiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/15 14:57:28 by ataguiro          #+#    #+#              #
-#    Updated: 2018/03/15 13:19:54 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/03/25 18:17:12 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ SRC		:=	$(SRCDIR)ft_bzero.s \
 			$(SRCDIR)ft_puts.s \
 			$(SRCDIR)ft_memset.s \
 			$(SRCDIR)ft_memcpy.s \
-			$(SRCDIR)ft_strdup.s
+			$(SRCDIR)ft_strdup.s \
+			$(SRCDIR)ft_cat.s
 OBJ		:=	$(SRC:$(SRCDIR)%.s=$(OBJDIR)%.o)
 INC		:=	-I./$(INCDIR)
 CACHEF	:=	.cache_exists
@@ -83,7 +84,7 @@ clean:
 	@printf $(YELLOW)"All objects removed\n"$(EOC)
 
 fclean: clean
-	@rm -f $(NAME) test_bin
+	@rm -f $(NAME) test_bin test_file_ft_cat.txt
 	@printf $(RED)"$(NAME) removed\n"$(EOC)
 
 test: all
