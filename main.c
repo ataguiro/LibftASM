@@ -114,6 +114,13 @@ int		main(void)
 	for (int i = 0; i < 128; ++i)
 		printf("ft_isprint (%d): %d --- isprint (%d): %d\n", i, ft_isprint(i), i, isprint(i));
 
+	/* FT_ISASCII */
+	puts("\n>>> FT_ISASCII <<<\n");
+
+	puts("Basic usage:");
+	for (int i = -5; i < 140; ++i)
+		printf("ft_isascii (%d): %d --- isascii (%d): %d\n", i, ft_isascii(i), i, isascii(i));
+
 	/* FT_TOUPPER */
 	puts("\n>>> FT_TOUPPER <<<\n");
 

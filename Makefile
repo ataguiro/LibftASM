@@ -28,6 +28,7 @@ SRC		:=	$(SRCDIR)ft_bzero.s \
 			$(SRCDIR)ft_isdigit.s \
 			$(SRCDIR)ft_isalnum.s \
 			$(SRCDIR)ft_isprint.s \
+			$(SRCDIR)ft_isascii.s \
 			$(SRCDIR)ft_toupper.s \
 			$(SRCDIR)ft_tolower.s \
 			$(SRCDIR)ft_puts.s \
