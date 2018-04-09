@@ -6,7 +6,7 @@
 #    By: ataguiro <ataguiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/15 14:57:28 by ataguiro          #+#    #+#              #
-#    Updated: 2018/04/09 20:04:10 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/04/09 20:12:02 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,6 +91,6 @@ fclean: clean
 	@printf $(RED)"$(NAME) removed\n"$(EOC)
 
 test: all
-	@gcc -g main.c -L. -lfts $(INC) -o test_bin
+	@gcc main.c -L. -lfts $(INC) -o test_bin
 
 re: fclean all
