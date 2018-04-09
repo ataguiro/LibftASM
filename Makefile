@@ -6,7 +6,7 @@
 #    By: ataguiro <ataguiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/15 14:57:28 by ataguiro          #+#    #+#              #
-#    Updated: 2018/03/25 18:17:12 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/04/09 20:04:10 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ SRC		:=	$(SRCDIR)ft_bzero.s \
 			$(SRCDIR)ft_toupper.s \
 			$(SRCDIR)ft_tolower.s \
 			$(SRCDIR)ft_puts.s \
+			$(SRCDIR)ft_putstr.s \
+			$(SRCDIR)ft_putendl.s \
 			$(SRCDIR)ft_memset.s \
 			$(SRCDIR)ft_memcpy.s \
 			$(SRCDIR)ft_strdup.s \
@@ -89,6 +91,6 @@ fclean: clean
 	@printf $(RED)"$(NAME) removed\n"$(EOC)
 
 test: all
-	@gcc main.c -L. -lfts $(INC) -o test_bin
+	@gcc -g main.c -L. -lfts $(INC) -o test_bin
 
 re: fclean all

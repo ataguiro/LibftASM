@@ -72,6 +72,17 @@ int		main(void)
 	n = ft_strlen(stack_ptr);
 	printf("ft_strlen output: %lu\n", ft_strlen(stack_ptr));
 
+	strcpy(stack_ptr, "\n");
+	printf("strlen output: %lu\n", strlen(stack_ptr));
+	n = ft_strlen(stack_ptr);
+	printf("ft_strlen output: %lu\n", ft_strlen(stack_ptr));
+
+	memset(stack_ptr, 0, sizeof(stack_ptr));
+	printf("strlen output: %lu\n", strlen(stack_ptr));
+	n = ft_strlen(stack_ptr);
+	printf("ft_strlen output: %lu\n", ft_strlen(stack_ptr));
+
+
 	/* FT_STRCAT */
 	puts("\n>>> FT_STRCAT <<<\n");
 
@@ -151,6 +162,23 @@ int		main(void)
 	n = ft_puts(ptr);
 	printf("ret = %d (ft_puts)\n", n);
 	printf("Integrity test: %s\n", ptr);
+
+	/* FT_PUTSTR */
+	strcpy(stack_ptr, "Hello World! I'm a test for ft_putstr");
+	puts("\n>>> FT_PUTSTR <<<\n");
+	write(1, "[", 1);
+	ft_putstr(stack_ptr);
+	write(1, "]", 1);
+	puts("");
+	printf("Integrity test: %s\n", stack_ptr);
+
+	/* FT_PUTENDL */
+	strcpy(stack_ptr, "Hello World! I'm a test for ft_putendl");
+	puts("\n>>> FT_PUTENDL <<<\n");
+	write(1, "[", 1);
+	ft_putendl(stack_ptr);
+	write(1, "]", 1);
+	printf("Integrity test: %s\n", stack_ptr);
 
 	/* FT_MEMSET */
 	puts("\n>>> FT_MEMSET tests <<<\n");
