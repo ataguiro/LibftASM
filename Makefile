@@ -6,7 +6,7 @@
 #    By: ataguiro <ataguiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/15 14:57:28 by ataguiro          #+#    #+#              #
-#    Updated: 2018/04/09 20:12:02 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/04/10 19:54:35 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ INCDIR	:=	include/
 SRC		:=	$(SRCDIR)ft_bzero.s \
 			$(SRCDIR)ft_strcat.s \
 			$(SRCDIR)ft_strlen.s \
+			$(SRCDIR)ft_strcmp.s \
 			$(SRCDIR)ft_isalpha.s \
 			$(SRCDIR)ft_isdigit.s \
 			$(SRCDIR)ft_isalnum.s \

@@ -164,22 +164,22 @@ int		main(void)
 	printf("Integrity test: %s\n", ptr);
 
 	/* FT_PUTSTR */
-	/*strcpy(stack_ptr, "Hello World! I'm a test for ft_putstr");
+	strcpy(stack_ptr, "Hello World! I'm a test for ft_putstr");
 	puts("\n>>> FT_PUTSTR <<<\n");
 	write(1, "[", 1);
 	ft_putstr(stack_ptr);
 	write(1, "]", 1);
 	puts("");
 	printf("Integrity test: %s\n", stack_ptr);
-*/
+
 	/* FT_PUTENDL */
-/*	strcpy(stack_ptr, "Hello World! I'm a test for ft_putendl");
+	strcpy(stack_ptr, "Hello World! I'm a test for ft_putendl");
 	puts("\n>>> FT_PUTENDL <<<\n");
 	write(1, "[", 1);
 	ft_putendl(stack_ptr);
 	write(1, "]", 1);
 	printf("Integrity test: %s\n", stack_ptr);
-*/
+
 	/* FT_MEMSET */
 	puts("\n>>> FT_MEMSET tests <<<\n");
 
@@ -237,7 +237,7 @@ int		main(void)
 	hexdump(ptr, strlen(ptr) + 1);
 
 	/* FT_CAT */
-/*	puts("\n>>> FT_CAT <<<\n");
+	puts("\n>>> FT_CAT <<<\n");
 
 	puts("Reading file 'test_file_ft_cat.txt' with different data...");
 
@@ -249,5 +249,30 @@ int		main(void)
 	system("echo 'Hello, World. I m a better testt!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                        1234567890qwertyuiopasdfghjklzxcvbnm[],./' > test_file_ft_cat.txt");
 	n = open("test_file_ft_cat.txt", O_RDONLY);
 	ft_cat(n);
-	close(n);*/
+	close(n);
+
+	/* FT_STRCMP */
+	puts("\n>>> FT_STRCMP <<<\n");
+
+	int n2 = 0;
+	memset(stack_ptr, 0, sizeof(stack_ptr));
+	memset(stack_ptr2, 0, sizeof(stack_ptr2));
+	strcpy(stack_ptr, "Bonjour, comment vas-tu ?");
+	strcpy(stack_ptr2, "Bonjour, comment vas-tu ?");
+	puts("Testing two similar strings...");
+
+	n2 = ft_strcmp(stack_ptr, stack_ptr2);
+	printf("ft_strcmp : %d\n", n2);
+	n2 = strcmp(stack_ptr, stack_ptr2);
+	printf("strcmp : %d\n", n2);
+
+	strcpy(stack_ptr, "Bonjour, comment");
+	strcpy(stack_ptr2, "Bonjour, comment vas-tu ?");
+
+	puts("Testing two different strings...");
+	n2 = ft_strcmp(stack_ptr, stack_ptr2);
+	printf("ft_strcmp : %d\n", n2);
+	n2 = strcmp(stack_ptr, stack_ptr2);
+	printf("strcmp : %d\n", n2);
+
 }
