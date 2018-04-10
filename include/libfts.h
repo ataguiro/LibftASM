@@ -13,6 +13,7 @@ int		ft_isprint(int c);
 int		ft_isascii(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_max(int a, int b);
 int		ft_puts(const char *s);
 void	ft_putstr(const char *s);
 void	ft_putendl(const char *s);

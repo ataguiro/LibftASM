@@ -1,9 +1,11 @@
 section .text
 	global _ft_strcmp
 
+extern _ft_strlen
+extern _ft_max
+
 _ft_strcmp:
 	cld
-	xor rax, rax
 	mov rcx, -1
 	repe cmpsb
 	dec rdi

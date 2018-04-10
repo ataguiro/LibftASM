@@ -251,6 +251,12 @@ int		main(void)
 	ft_cat(n);
 	close(n);
 
+	/* FT_CAT */
+	puts("\n>>> FT_MAX <<<\n");
+
+	puts("Testing 4 and 97");
+	printf("ft_max(4, 97) == %d\n", ft_max(4, 97));
+
 	/* FT_STRCMP */
 	puts("\n>>> FT_STRCMP <<<\n");
 

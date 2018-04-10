@@ -6,7 +6,7 @@
 #    By: ataguiro <ataguiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/15 14:57:28 by ataguiro          #+#    #+#              #
-#    Updated: 2018/04/10 19:54:35 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/04/10 20:34:09 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC		:=	$(SRCDIR)ft_bzero.s \
 			$(SRCDIR)ft_isascii.s \
 			$(SRCDIR)ft_toupper.s \
 			$(SRCDIR)ft_tolower.s \
+			$(SRCDIR)ft_max.s \
 			$(SRCDIR)ft_puts.s \
 			$(SRCDIR)ft_putstr.s \
 			$(SRCDIR)ft_putendl.s \
