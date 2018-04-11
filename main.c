@@ -90,12 +90,12 @@ int		main(void)
 	strcpy(stack_ptr, "Hello, ft_strcat ASM test! \0");
 	strcpy(stack_ptr2, "Me too!\0");
 	puts("=== Before ft_strcat ===");
-	hexdump(stack_ptr, strlen(stack_ptr));
+	hexdump(stack_ptr, strlen(stack_ptr) + 1);
 	ptr = ft_strcat(stack_ptr, stack_ptr2);
 	puts("\n=== After ft_strcat ===");
-	hexdump(ptr, strlen(ptr));
+	hexdump(ptr, strlen(ptr) + 1);
 	puts("--");
-	hexdump(stack_ptr, strlen(stack_ptr));
+	hexdump(stack_ptr, strlen(stack_ptr) + 1);
 
 	/* FT_ISALPHA */
 	puts("\n>>> FT_ISALPHA <<<\n");
@@ -257,6 +257,14 @@ int		main(void)
 	puts("Testing 4 and 97");
 	printf("ft_max(4, 97) == %d\n", ft_max(4, 97));
 
+	/* FT_MIN */
+	puts("\n>>> FT_MIN <<<\n");
+
+	puts("Testing 4 and 97");
+	printf("ft_min(4, 97) == %d\n", ft_min(4, 97));
+	puts("Testing 0 and 0");
+	printf("ft_min(0, 0) == %d\n", ft_min(0, 0));
+
 	/* FT_STRCMP */
 	puts("\n>>> FT_STRCMP <<<\n");
 
@@ -323,4 +331,22 @@ int		main(void)
 	ptr = ft_memalloc(42);
 	printf("ptr = %p\n", ptr);
 	hexdump(ptr, 42);
+
+	/* FT_STRCHR */
+	puts("\n>>> FT_STRCHR <<<\n");
+
+	printf("ft_strchr(\"Hello World!\", ' ') == [%s]\n", ft_strchr("Hello World!", ' '));
+	printf("strchr(\"Hello World!\", ' ') == [%s]\n", strchr("Hello World!", ' '));
+	printf("ft_strchr(\"Hello World!\", 'p') == [%s]\n", ft_strchr("Hello World!", 'p'));
+	printf("strchr(\"Hello World!\", 'p') == [%s]\n", strchr("Hello World!", 'p'));
+	printf("ft_strchr(\"Hello World!\", '!') == [%s]\n", ft_strchr("Hello World!", '!'));
+	printf("strchr(\"Hello World!\", '!') == [%s]\n", strchr("Hello World!", '!'));
+	printf("ft_strchr(\"Hello World!\", 'H') == [%s]\n", ft_strchr("Hello World!", 'H'));
+	printf("strchr(\"Hello World!\", 'H') == [%s]\n", strchr("Hello World!", 'H'));
+	printf("ft_strchr(\"Hello World!\", '\\0') == [%s]\n", ft_strchr("Hello World!", '\0'));
+	printf("strchr(\"Hello World!\", '\\0') == [%s]\n", strchr("Hello World!", '\0'));
+	printf("ft_strchr(\"\", '\\0') == [%s]\n", ft_strchr("", '\0'));
+	printf("strchr(\"\", '\\0') == [%s]\n", strchr("", '\0'));
+	printf("ft_strchr(\"\", 'p') == [%s]\n", ft_strchr("", 'p'));
+	printf("strchr(\"\", 'p') == [%s]\n", strchr("", 'p'));
 }
