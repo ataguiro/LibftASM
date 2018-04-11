@@ -315,4 +315,12 @@ int		main(void)
 	printf("ft_sum(44, 98) == %d\n", ft_sum(44, 98));
 	printf("ft_sum(-12, -55) == %d\n", ft_sum(-12, -55));
 	printf("ft_sum(12, -55) == %d\n", ft_sum(12, -55));
+
+	/* FT_MEMALLOC */
+	puts("\n>>> FT_MEMALLOC <<<\n");
+
+	puts("Asking bzeroed 42 bytes in heap...");
+	ptr = ft_memalloc(42);
+	printf("ptr = %p\n", ptr);
+	hexdump(ptr, 42);
 }

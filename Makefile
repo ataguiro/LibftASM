@@ -6,7 +6,7 @@
 #    By: ataguiro <ataguiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/15 14:57:28 by ataguiro          #+#    #+#              #
-#    Updated: 2018/04/11 13:21:33 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/04/11 15:32:01 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ OBJDIR	:=	obj/
 INCDIR	:=	include/
 SRC		:=	$(SRCDIR)ft_bzero.s \
 			$(SRCDIR)ft_strcat.s \
+			$(SRCDIR)ft_memalloc.s \
 			$(SRCDIR)ft_strlen.s \
 			$(SRCDIR)ft_strcmp.s \
 			$(SRCDIR)ft_isalpha.s \
@@ -77,7 +78,7 @@ $(OBJDIR)%.o: $(SRCDIR)%.s $(CACHEF)
 	@$(CC) $(SFLAGS) $< -o $@ $(INC)
 	@printf "\r"
 	@printf $(BGREEN)"[ compiling $(NAME)... ] "
-	@printf "$(shell echo 'scale=2;$(INDEX)/1 * 100' | bc)%%"$(EOC)
+	@printf "$(shell echo 'scale=2;$(INDEX)/23 * 100' | bc)%%"$(EOC)
 	@$(eval INDEX=$(shell echo $$(($(INDEX)+1))))
 
 $(CACHEF):

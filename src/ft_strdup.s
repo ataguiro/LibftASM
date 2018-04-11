@@ -6,7 +6,7 @@
 #    By: ataguiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/15 13:00:41 by ataguiro          #+#    #+#              #
-#    Updated: 2018/03/22 18:57:26 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/04/11 15:30:15 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ _ft_strdup:
 	call _ft_strlen
 	push rax
 	mov rdi, rax
+	inc rdi
 	call _malloc
 	push rax
 	pop rdi

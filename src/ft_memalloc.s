@@ -1,27 +1,30 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_putstr.s                                        :+:      :+:    :+:    #
+#    ft_memalloc.s                                      :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ataguiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/04/11 15:12:49 by ataguiro          #+#    #+#              #
-#    Updated: 2018/04/11 15:12:50 by ataguiro         ###   ########.fr        #
+#    Created: 2018/04/11 15:02:25 by ataguiro          #+#    #+#              #
+#    Updated: 2018/04/11 15:34:29 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 section .text
-	global _ft_putstr
+	global _ft_memalloc
 
-extern _ft_strlen
+extern _malloc
+extern _ft_bzero
 
-; write(1, rsi, strlen(rdi))
+_ft_memalloc:
+	inc rdi
+	push rdi
+	call _malloc
+	test rax, rax
+	jz end
 
-_ft_putstr:
-	mov rsi, rdi
-	call _ft_strlen
-	mov rdi, 1
-	mov rdx, rax
-	mov rax, 0x2000004 ; write syscall
-	syscall
+	mov rdi, rax
+	pop rsi
+	call _ft_bzero
+end:
 	ret
