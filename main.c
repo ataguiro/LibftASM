@@ -251,7 +251,7 @@ int		main(void)
 	ft_cat(n);
 	close(n);
 
-	/* FT_CAT */
+	/* FT_MAX */
 	puts("\n>>> FT_MAX <<<\n");
 
 	puts("Testing 4 and 97");
@@ -281,4 +281,38 @@ int		main(void)
 	n2 = strcmp(stack_ptr, stack_ptr2);
 	printf("strcmp : %d\n", n2);
 
+	strcpy(stack_ptr, "Hello hello!!");
+	strcpy(stack_ptr2, "Another test");
+
+	puts("Another test...");
+	n2 = ft_strcmp(stack_ptr, stack_ptr2);
+	printf("ft_strcmp : %d\n", n2);
+	n2 = strcmp(stack_ptr, stack_ptr2);
+	printf("strcmp : %d\n", n2);
+
+	/* FT_PUTCHAR */
+	puts("\n>>> FT_PUTCHAR <<<\n");
+	
+	strcpy(stack_ptr, "A test for ft_putchar!\n");
+	n = strlen(stack_ptr);
+	puts("ft_putchar:");
+	for (int i = 0; i < n; i++)
+		ft_putchar(stack_ptr[i]);
+	puts("putchar:");
+	for (int i = 0; i < n; i++)
+		putchar(stack_ptr[i]);
+
+	/* FT_ISIN */
+	puts("\n>>> FT_ISIN <<<\n");
+
+	printf("ft_isin('4', \"12345\") == %d\n", ft_isin('4', "12345"));
+	printf("ft_isin(' ', \"Hello World!\") == %d\n", ft_isin(' ', "Hello World!"));
+	printf("ft_isin('p', \"Not found\") == %d\n", ft_isin('p', "Not found"));
+
+	/* FT_SUM */
+	puts("\n>>> FT_SUM <<<\n");
+
+	printf("ft_sum(44, 98) == %d\n", ft_sum(44, 98));
+	printf("ft_sum(-12, -55) == %d\n", ft_sum(-12, -55));
+	printf("ft_sum(12, -55) == %d\n", ft_sum(12, -55));
 }

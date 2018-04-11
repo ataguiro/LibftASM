@@ -16,11 +16,14 @@ int		ft_tolower(int c);
 int		ft_max(int a, int b);
 int		ft_puts(const char *s);
 void	ft_putstr(const char *s);
+void	ft_putchar(char c);
 void	ft_putendl(const char *s);
 void	*ft_memset(void *s, int c, size_t len);
 void	*ft_memcpy(void *dst, void *src, size_t len);
 char	*ft_strdup(const char *s1);
 int		ft_cat(int fd);
 int		ft_strcmp(const char *s1, const char *s2);
+int		ft_isin(char c, const char *s);
+int		ft_sum(int a, int b);
 
 #endif
