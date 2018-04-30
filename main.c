@@ -38,7 +38,7 @@ void hexdump(void *mem, unsigned int len)
 	}
 }
 
-int		main(void)
+int		main(int ac, char **av)
 {
 	/* GENERIC INIT */
 	char			*ptr;
@@ -81,6 +81,12 @@ int		main(void)
 	printf("strlen output: %lu\n", strlen(stack_ptr));
 	n = ft_strlen(stack_ptr);
 	printf("ft_strlen output: %lu\n", ft_strlen(stack_ptr));
+
+	memset(stack_ptr, '\0', 10);
+	printf("strlen output: %lu\n", strlen(stack_ptr));
+	n = ft_strlen(stack_ptr);
+	printf("ft_strlen output: %lu\n", ft_strlen(stack_ptr));
+
 
 
 	/* FT_STRCAT */
@@ -201,19 +207,28 @@ int		main(void)
 	hexdump(stack_ptr, 27);
 	printf("Integrity test: %s\n", ptr);
 
+	puts("\nWith len 1:");
+	strcpy(stack_ptr, "Hello, ft_memset ASM test!\0");
+	puts("=== Before ft_memset ===");
+	hexdump(stack_ptr, 27);
+	ptr = ft_memset(stack_ptr, '\0', 1); // Setting to 'A' 0 byte, should do nothing
+	puts("\n=== After ft_memset(ptr, '\\0', 1) ===");
+	hexdump(stack_ptr, 27);
+	printf("Integrity test: %s\n", ptr);
+
 	/* FT_MEMCPY */
 	puts("\n>>> FT_MEMCPY tests <<<\n");
 
 	puts("Basic usage:");
 	strcpy(stack_ptr, "Hello, ft_memcpy ASM test!\0");
-	memset(stack_ptr2, 0, 27);
+	memset(stack_ptr2, 'A', 27);
 	puts("=== Before ft_memcpy ===");
 	hexdump(stack_ptr2, 27);
 	ptr = ft_memcpy(stack_ptr2, stack_ptr, 27); // Copying stack_ptr to stack_ptr2, checking with hexdump
 	puts("\n=== After ft_memcpy(dst, src, 27) ===");
 	hexdump(stack_ptr2, 27);
 	printf("Integrity test: %s\n", ptr);
-	
+
 	puts("\nWith len 0:");
 	strcpy(stack_ptr, "Hello, ft_memcpy ASM test!\0");
 	memset(stack_ptr2, 0, 27);
@@ -221,6 +236,16 @@ int		main(void)
 	hexdump(stack_ptr2, 27);
 	ptr = ft_memcpy(stack_ptr2, stack_ptr, 0); // Copying stack_ptr to stack_ptr2, checking with hexdump
 	puts("\n=== After ft_memcpy(dst, src, 0) ===");
+	hexdump(stack_ptr2, 27);
+	printf("Integrity test: %s\n", ptr);
+
+	puts("\nAnother test...");
+	strcpy(stack_ptr, "This is a string\0");
+	memset(stack_ptr2, 0, 27);
+	puts("=== Before ft_memcpy ===");
+	hexdump(stack_ptr2, 27);
+	ptr = ft_memcpy(stack_ptr2, stack_ptr, 10); // Copying stack_ptr to stack_ptr2, checking with hexdump
+	puts("\n=== After ft_memcpy(dst, src, 10) ===");
 	hexdump(stack_ptr2, 27);
 	printf("Integrity test: %s\n", ptr);
 
@@ -250,6 +275,12 @@ int		main(void)
 	n = open("test_file_ft_cat.txt", O_RDONLY);
 	ft_cat(n);
 	close(n);
+
+	ft_cat(0);
+	n = open(__FILE__, O_RDONLY); ft_cat(n); close(n);
+	n = open(av[0], O_RDONLY); ft_cat(n); close(n);
+
+	ft_cat(-42);
 
 	/* FT_MAX */
 	puts("\n>>> FT_MAX <<<\n");

@@ -6,7 +6,7 @@
 #    By: ataguiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/11 16:00:04 by ataguiro          #+#    #+#              #
-#    Updated: 2018/04/11 15:12:36 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/04/19 15:59:31 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,14 @@ section .text
 	global _ft_memset
 
 _ft_memset:
-	mov rax, rdi
-loop:
+	push rdi
 	test rdx, rdx
 	jz end
-	mov byte [rdi], sil
-	inc rdi
-	dec rdx
-	jne loop
+	cld
+	mov rcx, rdx
+	mov rax, rsi
+	rep stosb
 
 end:
+	pop rax
 	ret

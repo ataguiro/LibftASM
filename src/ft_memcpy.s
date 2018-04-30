@@ -6,7 +6,7 @@
 #    By: ataguiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/15 11:51:22 by ataguiro          #+#    #+#              #
-#    Updated: 2018/04/11 15:12:35 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/04/19 14:39:54 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,13 @@ _ft_memcpy:
 	jz end
 	cld           ; Just to be sure
 	rep movsb
+	mov rdx, rsi
+	inc rdx
+	mov al, byte [rdx]
+	test al, al
+	je go
+	jmp end
+go:
 	movsb
 
 end:

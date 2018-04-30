@@ -6,7 +6,7 @@
 #    By: ataguiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/15 13:00:41 by ataguiro          #+#    #+#              #
-#    Updated: 2018/04/11 15:30:15 by ataguiro         ###   ########.fr        #
+#    Updated: 2018/04/19 14:40:38 by ataguiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,10 @@ section .text
 extern _malloc
 extern _ft_strlen
 extern _ft_memcpy
+
+; In this function, rep instructions are implicit
+; since they are used in _ft_strlen and _ft_memcpy which are
+; called in this function
 
 _ft_strdup:
 	push rbp
